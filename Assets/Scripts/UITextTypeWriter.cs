@@ -12,7 +12,6 @@ public class UITextTypeWriter : MonoBehaviour
     static public float delayBetweenChars = 0.05f;
     static public float delayAfterPunctuation = 0.5f;
     
-    private float originDelayBetweenChars;
     private bool lastCharPunctuation = false;
     private char charComma;
     private char charPeriod;
@@ -26,14 +25,12 @@ public class UITextTypeWriter : MonoBehaviour
 
     void Awake()
     {
-        originDelayBetweenChars = delayBetweenChars;
-
         charComma = Convert.ToChar(44);
         charPeriod = Convert.ToChar(46);
     }
 
     //Update text and start typewriter effect
-    public void ChangeText(string textContent, float delayBetweenChars = 0f)
+    public void ChangeText(string textContent, float delayBetweenChars)
     {
         textField.text = ""; //clean textField content
         c = 0; // make sure forloop in coroutine starts at the right ID

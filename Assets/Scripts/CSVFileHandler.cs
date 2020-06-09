@@ -25,19 +25,19 @@ namespace CSVFileHandler
         {
             typeWriter = (UITextTypeWriter)FindObjectOfType<UITextTypeWriter>();
             ReadData();
-            typeWriter.ChangeText(BuildSentence(), 0f);
+            typeWriter.ChangeText(BuildSentence(), typeWriter.delayToStart);
         }
         private void Update()
         {
             if (Input.GetKeyDown("space"))
             {
-                typeWriter.ChangeText(BuildSentence(), 0f);
+                typeWriter.ChangeText(BuildSentence(), typeWriter.delayToStart);
             }
         }
 
         public void WhenYouClick()
         {
-            typeWriter.ChangeText(BuildSentence(), 0f);
+            typeWriter.ChangeText(BuildSentence(), typeWriter.delayToStart);
         }
         
         public void ReadData()
